@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAM-AI Checklist</title>
+<meta name="description" content="The TRAM-AI checklist: 14 items for verifying the functional accessibility of medical imaging datasets for AI development">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="site">
+    <h1>TRAM-AI Checklist</h1>
+    <p class="subtitle">Transparency in Reporting of Medical Imaging Datasets for Artificial Intelligence</p>
+    <nav><a href="index.html">Home</a><a href="checklist.html">Checklist</a></nav>
+  </header>
+
+  <p class="instructions">Use this checklist to verify that a medical imaging dataset described as publicly available is functionally accessible for AI development. For each item, indicate where the information is reported (eg, page or section of the manuscript, or the README or manifest file in the dataset repository). TRAM-AI complements methodological reporting guidelines such as CLAIM, CONSORT-AI, and TRIPOD+AI.</p>
+  <p><button class="print" type="button" onclick="window.print()">Print / Save as PDF</button></p>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Item</th>
+        <th scope="col">Requirement</th>
+        <th scope="col">Rationale</th>
+        <th scope="col">Reported in</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section"><td colspan="5">A. Dataset Access and Persistence</td></tr>
+      <tr>
+        <td class="id">A1</td>
+        <td class="topic">Trusted Repository</td>
+        <td>Host the dataset on a recognized, third-party repository (eg, Zenodo, TCIA, PhysioNet, MIDRC, Kaggle, OpenNeuro), not a personal website.</td>
+        <td>Prevents &ldquo;link rot&rdquo; and data decay.</td>
+        <td class="loc"><input type="text" aria-label="A1 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">A2</td>
+        <td class="topic">Persistent Identifier</td>
+        <td>Assign the dataset a digital object identifier (DOI) or stable accession number.</td>
+        <td>Ensures findability and citability.</td>
+        <td class="loc"><input type="text" aria-label="A2 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">A3</td>
+        <td class="topic">Version Control</td>
+        <td>Support explicit versioning; cite the specific version in the manuscript.</td>
+        <td>Ensures reproducibility if dataset updated.</td>
+        <td class="loc"><input type="text" aria-label="A3 reported in"></td>
+      </tr>
+
+      <tr class="section"><td colspan="5">B. Technical Interoperability</td></tr>
+      <tr>
+        <td class="id">B1</td>
+        <td class="topic">Standardized Formats</td>
+        <td>Use a non-proprietary data format (DICOM, NIfTI, BIDS); JPEG is acceptable if original pixel bit depth is preserved. Document whether the data are raw or preprocessed.</td>
+        <td>Prevents vendor lock-in.</td>
+        <td class="loc"><input type="text" aria-label="B1 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">B2</td>
+        <td class="topic">File Integrity</td>
+        <td>Provide cryptographic hashes (MD5/SHA-256).</td>
+        <td>Assures integrity of downloaded data.</td>
+        <td class="loc"><input type="text" aria-label="B2 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">B3</td>
+        <td class="topic">Directory Structure</td>
+        <td>Document the folder hierarchy (eg, in a manifest or README file).</td>
+        <td>Prevents &ldquo;data dump&rdquo; phenomenon.</td>
+        <td class="loc"><input type="text" aria-label="B3 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">B4</td>
+        <td class="topic">Archive Validation</td>
+        <td>Confirm that data can be extracted on different operating systems. Cross-system validation may be achieved through institutional partnerships.</td>
+        <td>Assures data can be accessed regardless of operating system.</td>
+        <td class="loc"><input type="text" aria-label="B4 reported in"></td>
+      </tr>
+
+      <tr class="section"><td colspan="5">C. Metadata and Reproducibility</td></tr>
+      <tr>
+        <td class="id">C1</td>
+        <td class="topic">Subject-Level Mapping</td>
+        <td>Include a machine-readable file that links image identifiers to subject identifiers. May be embedded within the manifest or README file.</td>
+        <td>Prevents data leakage.</td>
+        <td class="loc"><input type="text" aria-label="C1 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">C2</td>
+        <td class="topic">Partition Keys</td>
+        <td>Provide subject identifiers for training, validation, and testing cases as static lists. May be embedded within the manifest or README file.</td>
+        <td>Enables exact replication.</td>
+        <td class="loc"><input type="text" aria-label="C2 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">C3</td>
+        <td class="topic">Data Dictionary</td>
+        <td>Define labels and reference-standard source.</td>
+        <td>Resolves ambiguity.</td>
+        <td class="loc"><input type="text" aria-label="C3 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">C4</td>
+        <td class="topic">Exclusion Log</td>
+        <td>Provide identifiers of excluded cases and reasons for exclusion. State explicitly if there are no exclusions.</td>
+        <td>Enables bias assessment.</td>
+        <td class="loc"><input type="text" aria-label="C4 reported in"></td>
+      </tr>
+
+      <tr class="section"><td colspan="5">D. Ethical, Legal, and Maintenance</td></tr>
+      <tr>
+        <td class="id">D1</td>
+        <td class="topic">Explicit Licensing</td>
+        <td>Apply a standard license (eg, CC-BY, CC0, ODbL, ODC-BY).</td>
+        <td>Clarifies permitted uses.</td>
+        <td class="loc"><input type="text" aria-label="D1 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">D2</td>
+        <td class="topic">De-identification</td>
+        <td>Confirm removal of Protected Health Information (PHI) from headers and pixel data, including burned-in annotations (eg, orientation markers on ultrasound/radiography). Confirm &ldquo;skull stripping&rdquo; or other facial de-identification method for head or brain imaging.</td>
+        <td>Protects privacy.</td>
+        <td class="loc"><input type="text" aria-label="D2 reported in"></td>
+      </tr>
+      <tr>
+        <td class="id">D3</td>
+        <td class="topic">Maintenance Policy</td>
+        <td>Provide an institutional contact for error reporting. Describe deprecation process.</td>
+        <td>Enables issue resolution.</td>
+        <td class="loc"><input type="text" aria-label="D3 reported in"></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="abbrev">BIDS = Brain Imaging Data Structure; CC0 = Creative Commons Zero; CC-BY = Creative Commons Attribution; DICOM = Digital Imaging and Communications in Medicine; DOI = digital object identifier; JPEG = Joint Photographic Experts Group; MD5 = Message-Digest Algorithm 5; MIDRC = Medical Imaging and Data Resource Center; NIfTI = Neuroimaging Informatics Technology Initiative; ODbL = Open Database License; ODC-BY = Open Data Commons Attribution License; PHI = protected health information; SHA-256 = Secure Hash Algorithm 256-bit; TCIA = The Cancer Imaging Archive.</p>
+
+  <footer>
+    Source: Bose K, Gupta P, et al; Kahn CE Jr. TRAM-AI: A Framework for Transparency in Reporting of Medical Imaging Datasets for Artificial Intelligence Development. <em>Radiology: Artificial Intelligence</em> 2026. DOI: <a href="https://doi.org/10.1148/ryai.260538">10.1148/ryai.260538</a>. &copy; RSNA, 2026.
+  </footer>
+</main>
+</body>
+</html>

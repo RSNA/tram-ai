@@ -1,0 +1,62 @@
+:root {
+  --fg: #1f2328;
+  --muted: #59636e;
+  --bg: #ffffff;
+  --panel: #f6f8fa;
+  --border: #d1d9e0;
+  --accent: #0b5394;
+  --section: #e8f0f8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3;
+    --muted: #9198a1;
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #3d444d;
+    --accent: #6cb6ff;
+    --section: #1b2735;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+header.site { border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header.site h1 { margin: 0 0 4px; font-size: 2rem; }
+header.site p.subtitle { margin: 0 0 16px; color: var(--muted); }
+nav a { margin-right: 16px; }
+a { color: var(--accent); }
+h2 { margin-top: 32px; }
+.cite { background: var(--panel); border-left: 4px solid var(--accent); padding: 12px 16px; }
+.instructions { color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; text-align: left; }
+thead th { background: var(--panel); }
+tr.section td { background: var(--section); font-weight: 600; }
+td.id { font-weight: 600; white-space: nowrap; }
+td.topic { font-weight: 600; min-width: 9em; }
+td.loc { width: 9em; }
+td.loc input {
+  width: 100%; font: inherit; color: var(--fg); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 4px; padding: 4px 6px;
+}
+.abbrev { font-size: 0.875rem; color: var(--muted); margin-top: 12px; }
+footer { margin-top: 40px; font-size: 0.875rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 12px; }
+button.print {
+  font: inherit; padding: 6px 14px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--panel); color: var(--fg); cursor: pointer;
+}
+@media print {
+  :root { --fg: #000; --bg: #fff; --panel: #eee; --section: #e6e6e6; --border: #999; --accent: #000; }
+  nav, button.print { display: none; }
+  main { padding: 0; max-width: none; }
+  body { font-size: 10.5pt; }
+  td.loc input { border: none; border-bottom: 1px solid #999; border-radius: 0; }
+  tr { page-break-inside: avoid; }
+}
