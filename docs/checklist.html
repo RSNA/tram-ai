@@ -15,7 +15,7 @@
     <nav><a href="index.html">Home</a><a href="checklist.html">Checklist</a></nav>
   </header>
 
-  <p class="instructions">Use this checklist to verify that a medical imaging dataset described as publicly available is functionally accessible for AI development. For each item, enter the value or a reference to where the information is reported (eg, page or section of the manuscript, or the README or manifest file in the dataset repository), and check the Reported box if the item is reported. TRAM-AI complements methodological reporting guidelines such as CLAIM, CONSORT-AI, and TRIPOD+AI.</p>
+  <p class="instructions">Use this checklist to verify that a medical imaging dataset described as publicly available is functionally accessible for AI development. For each item, enter the value or a reference to where the information is reported (eg, page or section of the manuscript, or the README or manifest file in the dataset repository). Leave the field blank if the item is not reported. TRAM-AI complements methodological reporting guidelines such as CLAIM, CONSORT-AI, and TRIPOD+AI.</p>
   <p><button class="print" type="button" onclick="window.print()">Print / Save as PDF</button></p>
 
   <div class="table-wrap">
@@ -25,114 +25,99 @@
         <th scope="col">No.</th>
         <th scope="col">Item</th>
         <th scope="col">Requirement</th>
-        <th scope="col">Reported</th>
         <th scope="col">Value / Reference</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="section"><td colspan="5">A. Dataset Access and Persistence</td></tr>
+      <tr class="section"><td colspan="4">A. Dataset Access and Persistence</td></tr>
       <tr>
         <td class="id">A1</td>
         <td class="topic">Trusted Repository</td>
         <td>Host the dataset on a recognized, third-party repository (eg, Zenodo, TCIA, PhysioNet, MIDRC, Kaggle, OpenNeuro), not a personal website.</td>
-        <td class="rep"><input type="checkbox" id="rep-A1" aria-label="A1 reported"></td>
         <td class="loc"><input type="text" aria-label="A1 value or reference"></td>
       </tr>
       <tr>
         <td class="id">A2</td>
         <td class="topic">Persistent Identifier</td>
         <td>Assign the dataset a digital object identifier (DOI) or stable accession number.</td>
-        <td class="rep"><input type="checkbox" id="rep-A2" aria-label="A2 reported"></td>
         <td class="loc"><input type="text" aria-label="A2 value or reference"></td>
       </tr>
       <tr>
         <td class="id">A3</td>
         <td class="topic">Version Control</td>
         <td>Support explicit versioning; cite the specific version in the manuscript.</td>
-        <td class="rep"><input type="checkbox" id="rep-A3" aria-label="A3 reported"></td>
         <td class="loc"><input type="text" aria-label="A3 value or reference"></td>
       </tr>
 
-      <tr class="section"><td colspan="5">B. Technical Interoperability</td></tr>
+      <tr class="section"><td colspan="4">B. Technical Interoperability</td></tr>
       <tr>
         <td class="id">B1</td>
         <td class="topic">Standardized Formats</td>
         <td>Use a non-proprietary data format (DICOM, NIfTI, BIDS); JPEG is acceptable if original pixel bit depth is preserved. Document whether the data are raw or preprocessed.</td>
-        <td class="rep"><input type="checkbox" id="rep-B1" aria-label="B1 reported"></td>
         <td class="loc"><input type="text" aria-label="B1 value or reference"></td>
       </tr>
       <tr>
         <td class="id">B2</td>
         <td class="topic">File Integrity</td>
         <td>Provide cryptographic hashes (MD5/SHA-256).</td>
-        <td class="rep"><input type="checkbox" id="rep-B2" aria-label="B2 reported"></td>
         <td class="loc"><input type="text" aria-label="B2 value or reference"></td>
       </tr>
       <tr>
         <td class="id">B3</td>
         <td class="topic">Directory Structure</td>
         <td>Document the folder hierarchy (eg, in a manifest or README file).</td>
-        <td class="rep"><input type="checkbox" id="rep-B3" aria-label="B3 reported"></td>
         <td class="loc"><input type="text" aria-label="B3 value or reference"></td>
       </tr>
       <tr>
         <td class="id">B4</td>
         <td class="topic">Archive Validation</td>
         <td>Confirm that data can be extracted on different operating systems. Cross-system validation may be achieved through institutional partnerships.</td>
-        <td class="rep"><input type="checkbox" id="rep-B4" aria-label="B4 reported"></td>
         <td class="loc"><input type="text" aria-label="B4 value or reference"></td>
       </tr>
 
-      <tr class="section"><td colspan="5">C. Metadata and Reproducibility</td></tr>
+      <tr class="section"><td colspan="4">C. Metadata and Reproducibility</td></tr>
       <tr>
         <td class="id">C1</td>
         <td class="topic">Subject-Level Mapping</td>
         <td>Include a machine-readable file that links image identifiers to subject identifiers. May be embedded within the manifest or README file.</td>
-        <td class="rep"><input type="checkbox" id="rep-C1" aria-label="C1 reported"></td>
         <td class="loc"><input type="text" aria-label="C1 value or reference"></td>
       </tr>
       <tr>
         <td class="id">C2</td>
         <td class="topic">Partition Keys</td>
         <td>Provide subject identifiers for training, validation, and testing cases as static lists. May be embedded within the manifest or README file.</td>
-        <td class="rep"><input type="checkbox" id="rep-C2" aria-label="C2 reported"></td>
         <td class="loc"><input type="text" aria-label="C2 value or reference"></td>
       </tr>
       <tr>
         <td class="id">C3</td>
         <td class="topic">Data Dictionary</td>
         <td>Define labels and reference-standard source.</td>
-        <td class="rep"><input type="checkbox" id="rep-C3" aria-label="C3 reported"></td>
         <td class="loc"><input type="text" aria-label="C3 value or reference"></td>
       </tr>
       <tr>
         <td class="id">C4</td>
         <td class="topic">Exclusion Log</td>
         <td>Provide identifiers of excluded cases and reasons for exclusion. State explicitly if there are no exclusions.</td>
-        <td class="rep"><input type="checkbox" id="rep-C4" aria-label="C4 reported"></td>
         <td class="loc"><input type="text" aria-label="C4 value or reference"></td>
       </tr>
 
-      <tr class="section"><td colspan="5">D. Ethical, Legal, and Maintenance</td></tr>
+      <tr class="section"><td colspan="4">D. Ethical, Legal, and Maintenance</td></tr>
       <tr>
         <td class="id">D1</td>
         <td class="topic">Explicit Licensing</td>
         <td>Apply a standard license (eg, CC-BY, CC0, ODbL, ODC-BY).</td>
-        <td class="rep"><input type="checkbox" id="rep-D1" aria-label="D1 reported"></td>
         <td class="loc"><input type="text" aria-label="D1 value or reference"></td>
       </tr>
       <tr>
         <td class="id">D2</td>
         <td class="topic">De-identification</td>
         <td>Confirm removal of Protected Health Information (PHI) from headers and pixel data, including burned-in annotations (eg, orientation markers on ultrasound/radiography). Confirm &ldquo;skull stripping&rdquo; or other facial de-identification method for head or brain imaging.</td>
-        <td class="rep"><input type="checkbox" id="rep-D2" aria-label="D2 reported"></td>
         <td class="loc"><input type="text" aria-label="D2 value or reference"></td>
       </tr>
       <tr>
         <td class="id">D3</td>
         <td class="topic">Maintenance Policy</td>
         <td>Provide an institutional contact for error reporting. Describe deprecation process.</td>
-        <td class="rep"><input type="checkbox" id="rep-D3" aria-label="D3 reported"></td>
         <td class="loc"><input type="text" aria-label="D3 value or reference"></td>
       </tr>
     </tbody>
