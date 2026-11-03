@@ -15,7 +15,7 @@
     <nav><a href="index.html">Home</a><a href="checklist.html">Checklist</a></nav>
   </header>
 
-  <p class="instructions">Use this checklist to verify that a medical imaging dataset described as publicly available is functionally accessible for AI development. For each item, enter the value or a reference to where the information is reported (eg, page or section of the manuscript, or the README or manifest file in the dataset repository); the Reported box is checked automatically when text is entered. TRAM-AI complements methodological reporting guidelines such as CLAIM, CONSORT-AI, and TRIPOD+AI.</p>
+  <p class="instructions">Use this checklist to verify that a medical imaging dataset described as publicly available is functionally accessible for AI development. For each item, enter the value or a reference to where the information is reported (eg, page or section of the manuscript, or the README or manifest file in the dataset repository); the Reported box is checked automatically when text is entered and unchecked when the field is cleared. TRAM-AI complements methodological reporting guidelines such as CLAIM, CONSORT-AI, and TRIPOD+AI.</p>
   <p><button class="print" type="button" onclick="window.print()">Print / Save as PDF</button></p>
 
   <div class="table-wrap">
@@ -148,9 +148,7 @@
 <script>
   document.querySelectorAll('td.loc input[data-item]').forEach(function (input) {
     input.addEventListener('input', function () {
-      if (input.value.trim() !== '') {
-        document.getElementById('rep-' + input.dataset.item).checked = true;
-      }
+      document.getElementById('rep-' + input.dataset.item).checked = input.value.trim() !== '';
     });
   });
 </script>
