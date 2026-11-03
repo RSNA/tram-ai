@@ -41,7 +41,9 @@ thead th { background: var(--panel); }
 tr.section td { background: var(--section); font-weight: 600; }
 td.id { font-weight: 600; white-space: nowrap; }
 td.topic { font-weight: 600; min-width: 9em; }
-td.loc { width: 9em; }
+td.loc { width: 32%; min-width: 14em; }
+td.rep { text-align: center; vertical-align: middle; width: 6em; }
+td.rep input { width: 1.15em; height: 1.15em; accent-color: var(--accent); cursor: pointer; }
 td.loc input {
   width: 100%; font: inherit; color: var(--fg); background: var(--bg);
   border: 1px solid var(--border); border-radius: 4px; padding: 4px 6px;
@@ -57,6 +59,7 @@ button.print {
   nav, button.print { display: none; }
   main { padding: 0; max-width: none; }
   body { font-size: 10.5pt; }
+  td.rep input { accent-color: #000; }
   td.loc input { border: none; border-bottom: 1px solid #999; border-radius: 0; }
   tr { page-break-inside: avoid; }
 }
